@@ -1,5 +1,5 @@
 # Twitter 2.0 with REACT.JS! 
-## <a href="https://twitterclone-ekdtgp4nv-sashenjayathilaka.vercel.app" target="_blank">🔴 LIVE DEMO</a>
+## <a href="https://twitterclone-gamma.vercel.app" target="_blank">🔴 LIVE DEMO</a>
 
 #### PREREQUISITES:
 - Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
@@ -114,5 +114,5 @@ npm i tailwind-scrollbar-hide
 ```
 npm i @portabletext/react
 ```
-![image](https://user-images.githubusercontent.com/99184393/183280055-9ab92299-5ca4-4865-b317-b2c0d2b77c23.png)
+<a href="https://twitterclone-gamma.vercel.app" target="_blank">![image](https://user-images.githubusercontent.com/99184393/183280055-9ab92299-5ca4-4865-b317-b2c0d2b77c23.png)</a>
 <div align="center">Don't forget to leave a star ⭐️</div>

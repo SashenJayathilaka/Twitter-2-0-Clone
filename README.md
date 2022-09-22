@@ -1,37 +1,126 @@
-# Twitter 2.0 with REACT.JS! 
-## <a href="https://twitterclone-gamma.vercel.app" target="_blank">🔴 LIVE DEMO</a>
+# Twitter 2.0 with REACT.JS!
 
-#### PREREQUISITES:
-- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
-- Sanity <a href='https://www.sanity.io/'>HERE</a>
+<a href="https://twitterclone-gamma.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+![](https://img.shields.io/badge/Maintained-Yes-indigo)
+![](https://img.shields.io/github/forks/SashenJayathilaka/Twitter-2-0-Clone.svg)
+![](https://img.shields.io/github/stars/SashenJayathilaka/Twitter-2-0-Clone.svg)
+![](https://img.shields.io/github/issues/SashenJayathilaka/Twitter-2-0-Clone)
+![](https://img.shields.io/github/last-commit/SashenJayathilaka/Twitter-2-0-Clone)
 
+<!-- Screenshots -->
+### :camera: Screenshots
+
+<div align="center">
+<a href="https://twitterclone-gamma.vercel.app"><img width='800rem'  src='https://user-images.githubusercontent.com/99184393/183280055-9ab92299-5ca4-4865-b317-b2c0d2b77c23.png' alt='image'/></a>
+</div>
+
+## <a href="https://twitterclone-gamma.vercel.app" target="_blank">LIVE DEMO 💥</a>
+
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
+![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
+
+### :space_invader: Tech Stack
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://#/">Typescript</a></li>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.sanity.io">Sanity</a></li>
+  </ul>
+</details>
+
+<br />
+
+<table>
+    <tr>
+        <td>
 <a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="" width="30" height="30" /></a>
+        </td>
+                <td>
 <a href="#"><img src="https://user-images.githubusercontent.com/99184393/183096870-fdf58e59-d78c-44f4-bd1c-f9033c16d907.png" alt="Google" width="30" height="30" /></a>
+        </td>
+                        <td>
 <a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="Google" width="30" height="30" /></a>
+        </td>
+                        <td>
 <a href="#"><img src="https://user-images.githubusercontent.com/99184393/179383376-874f547c-4e6f-4826-850e-706b009e7e2b.png" alt="" width="30" height="30" /></a>
+        </td>
+                        <td>
 <a href="#"><img src="https://user-images.githubusercontent.com/99184393/180462270-ea4a249c-627c-4479-9431-5c3fd25454c4.png" alt="" width="30" height="30" /></a>
+        </td>
+                                <td>
 <a href="#"><img src="https://user-images.githubusercontent.com/99184393/183095729-0ae04014-a62c-4013-93ff-6861fbff308e.png" alt="" width="30" height="30" /></a>
-<a href="#"><img src="https://user-images.githubusercontent.com/99184393/180461713-76c02155-35f5-497e-b3a3-364fec13da39.png" alt="" width="30" height="30" /></a>
-<a href="#"><img src="https://raw.githubusercontent.com/atulmy/oauth/master/web/public/images/social/google.svg" alt="" width="30" height="30" /></a>
-<a href="#"><img src="https://raw.githubusercontent.com/atulmy/oauth/master/web/public/images/tech/github.svg" alt="" width="30" height="30" /></a>
+        </td>
+                                <td>
 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png" alt="" width="30" height="30" /></a>
-<br>
-<hr />
+        </td>
+    </tr>
+</table>
+
+## 	:toolbox: Getting Started
+### :bangbang: Prerequisites
+- Sign up for a Firebase account <a href='https://firebase.google.com'>HERE</a>
+- Sign up for a Sanity account <a href='https://www.sanity.io'>HERE</a>
+- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
+
+<!-- Env Variables -->
+### :key: Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`SANITY_API_TOKEN`
+
+`NEXT_PUBLIC_SANITY_PROJECT_ID`
+
+`NEXT_PUBLIC_SANITY_DATASET`
+
+`NEXT_PUBLIC_FIREBASE_API_KEY`
+
+`NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+
+`NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+
+`NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+
+`NEXT_PUBLIC_FIREBASE_MESSAGING_SET`
+
+`NEXT_PUBLIC_FIREBASE_APP_ID`
+
+`NEXT_PUBLIC_BASE_URL`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### :gear: Installation
 
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![](https://img.shields.io/badge/next.js-20232A?style=for-the-badge&logo=next.js&logoColor=61DAFB)
+
+Install my-project with npm
 ```
-npx create-next-app@latest --ts
+npx create-next-app@latest --ts my-project
 ```
-project name? twitter-clone
 ```
-cd twitter-clone
+cd my-project
 ```
-## Install Tailwind CSS with Next.js
+
+Install dependencies
+
+### :test_tube: Install Tailwind CSS with Next.js
 #### Install Tailwind CSS
-`Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both tailwind.config.js and postcss.config.js.`
+![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+Install tailwindcss and its peer dependencies via npm, and then run the init command to generate both ``tailwind.config.js`` and ``postcss.config.js``.
+
 ```
 npm install -D tailwindcss postcss autoprefixer
 ```
@@ -39,7 +128,7 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 #### Configure your template paths
-`Add the paths to all of your template files in your tailwind.config.js file.`
+Add the paths to all of your template files in your ``tailwind.config.js`` file.
 <br>
 ```
 module.exports = {
@@ -54,21 +143,43 @@ module.exports = {
 }
 ```
 #### Add the Tailwind directives to your CSS
-`Add the @tailwind directives for each of Tailwind’s layers to your ./styles/globals.css file.`
+Add the ``@tailwind`` directives for each of Tailwind’s layers to your ``./styles/globals.css`` file.
 ```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Install dependencies
 
-First, run the development server:
+<a href="https://github.com/SashenJayathilaka/Twitter-2-0-Clone/blob/master/package.json" target="_blank">🔶 Dependency Info</a>
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/SashenJayathilaka/Twitter-2-0-Clone.git
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+Start the server
+
+```bash
+  npm run dev
+```
+
+<hr />
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+<hr />
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -87,32 +198,21 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-#### Deploy on Vercel
+<!-- Deployment -->
+### :triangular_flag_on_post: Deployment
+
+To deploy this project run
+
+##### Deploy on Vercel
+
+![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-```
-npm i @heroicons/react
-```
-```
-npm i react-timeago
-```
-```
-npm i next-sanity
-```
-```
-npm i react-hot-toast
-```
-```
-npm i react-twitter-embed
-```
-```
-npm i tailwind-scrollbar-hide
-```
-```
-npm i @portabletext/react
-```
-<a href="https://twitterclone-gamma.vercel.app" target="_blank">![image](https://user-images.githubusercontent.com/99184393/183280055-9ab92299-5ca4-4865-b317-b2c0d2b77c23.png)</a>
-<div align="center">Don't forget to leave a star ⭐️</div>
+## :handshake: Contact
+
+Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
+
+Project Link: [https://twitterclone-gamma.vercel.app](https://twitterclone-gamma.vercel.app)

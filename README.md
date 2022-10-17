@@ -1,4 +1,15 @@
+<div align="center">
+
+  <img src="https://camo.githubusercontent.com/208f5e3fc9d54404fce773aa15b8e1e44d1442a45095bb2e29ebf0d470f3566b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f342f34662f547769747465722d6c6f676f2e7376672f3132303070782d547769747465722d6c6f676f2e7376672e706e67" alt="logo" width="200" height="auto" />
+  
 # Twitter 2.0 with REACT.JS!
+  
+  <p>
+   Twitter 2.0 with REACT.JS! (Next.js, Sanity CMS, Typescript, SSR, Tailwind & GoogleAuth)
+  </p>
+  
+  
+<!-- Badges -->
 
 <a href="https://twitterclone-gamma.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
@@ -6,6 +17,37 @@
 ![](https://img.shields.io/github/stars/SashenJayathilaka/Twitter-2-0-Clone.svg)
 ![](https://img.shields.io/github/issues/SashenJayathilaka/Twitter-2-0-Clone)
 ![](https://img.shields.io/github/last-commit/SashenJayathilaka/Twitter-2-0-Clone)
+
+   
+<h4>
+    <a href="https://twitterclone-gamma.vercel.app">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/SashenJayathilaka/Twitter-2-0-Clone/blob/master/README.md">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/SashenJayathilaka/Twitter-2-0-Clone/issues">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/SashenJayathilaka/Twitter-2-0-Clone/issues">Request Feature</a>
+  </h4>
+</div>
+
+<br />
+
+<!-- Table of Contents -->
+## :notebook_with_decorative_cover: Table of Contents
+
+- [About the Project](#star2-about-the-project)
+  * [Screenshots](#camera-screenshots)
+  * [Tech Stack](#space_invader-tech-stack)
+  * [Environment Variables](#key-environment-variables)
+- [Getting Started](#toolbox-getting-started)
+  * [Prerequisites](#bangbang-prerequisites)
+  * [Installation](#gear-installation)
+  * [Run Locally](#running-run-locally)
+  * [Deployment](#triangular_flag_on_post-deployment)
+- [Contact](#handshake-contact)
+
+<!-- About the Project -->
+## :star2: About the Project
 
 <!-- Screenshots -->
 ### :camera: Screenshots

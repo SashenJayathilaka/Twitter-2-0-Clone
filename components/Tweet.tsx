@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Tweet, Comment, CommentBody } from "../typings";
-import TimeAgo from "react-timeago";
 import {
   ChatAltIcon,
   HeartIcon,
   SwitchHorizontalIcon,
   UploadIcon,
 } from "@heroicons/react/outline";
-import { fetchComments } from "../utils/fetchComments";
-import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import TimeAgo from "react-timeago";
+import { Comment, CommentBody, Tweet } from "../typings";
+
 import { auth } from "../firebase/firebase";
-import { useRouter } from "next/router";
+import { fetchComments } from "../utils/fetchComments";
 
 interface Props {
   tweet: Tweet;
 }
 
 function Tweet({ tweet }: Props) {
-  const router = useRouter();
   const [user] = useAuthState(auth);
   const [comments, setComments] = useState<Comment[]>([]);
   const [input, setInput] = useState<string>("");
@@ -63,12 +63,12 @@ function Tweet({ tweet }: Props) {
     refreshComments();
   };
 
-  const handleSignIn = async () => {
+  /*   const handleSignIn = async () => {
     router.push("/auth/signin");
-  };
+  }; */
 
   return (
-    <div className="flex flex-col space-x-3 border-y border-gray-100 p-5">
+    <div className="flex flex-col space-x-3 border-y border-gray-100 p-5 hover:shadow-lg">
       <div className="flex space-x-3">
         <img
           className="h-10 w-10 rounded-full object-cover "
@@ -98,28 +98,46 @@ function Tweet({ tweet }: Props) {
         </div>
       </div>
       <div className="mt-5 flex justify-between">
-        <div
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => setCommentBoxOpen(!commentBoxOpen)}
           className="flex cursor-pointer item-center space-x-3 text-gray-400"
         >
           <ChatAltIcon className="h-5 w-5" />
-          <p>{comments.length}</p>
-        </div>
-        <div className="flex cursor-pointer item-center space-x-3 text-gray-400">
+          <p className="text-center">{comments.length}</p>
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex cursor-pointer item-center space-x-3 text-gray-400"
+        >
           <SwitchHorizontalIcon className="h-5 w-5" />
-        </div>
-        <div className="flex cursor-pointer item-center space-x-3 text-gray-400">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex cursor-pointer item-center space-x-3 text-gray-400"
+        >
           <HeartIcon className="h-5 w-5" />
-        </div>
-        <div className="flex cursor-pointer item-center space-x-3 text-gray-400">
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex cursor-pointer item-center space-x-3 text-gray-400"
+        >
           <UploadIcon className="h-5 w-5" />
-        </div>
+        </motion.div>
       </div>
 
       {commentBoxOpen && (
         <>
           {user ? (
-            <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <form className="mt-3 flex space-x-3">
                 <input
                   value={input}
@@ -137,7 +155,7 @@ function Tweet({ tweet }: Props) {
                   Post
                 </button>
               </form>
-            </>
+            </motion.div>
           ) : (
             <div className="flex text-red-500 justify-center m-auto font-semibold">
               <p>You Need To Sign IN</p>
@@ -145,33 +163,41 @@ function Tweet({ tweet }: Props) {
           )}
         </>
       )}
-
-      {comments?.length > 0 && (
-        <div className="my-2 mt-5 max-h-44 space-y-5 overflow-y-scroll border-t border-gray-100 p-5">
-          {comments.map((comment) => (
-            <div key={comment._id} className="flex space-x-2">
-              <hr className="top-10 h-8 border-x border-twitter/30" />
-              <img
-                src={comment.profileImg}
-                className="mt-2 h-7 w-7 rounded-full object-cover"
-                alt=""
-              />
-              <div>
-                <div className="flex items-center space-x-l">
-                  <p className="mr-1 font-bold">{comment.username}</p>
-                  <p className="hidden text-sm text-gray-500 lg:inline">
-                    @{comment.username.replace(/\s+/g, "")}.
-                  </p>
-                  <TimeAgo
-                    className="text-sm text-gray-500"
-                    date={comment._createdAt}
+      {commentBoxOpen && (
+        <>
+          {comments?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="my-2 mt-5 max-h-44 space-y-5 overflow-y-scroll border-t border-gray-100 p-5 scrollbar-thin scrollbar-thumb-blue-100"
+            >
+              {comments.map((comment) => (
+                <div key={comment._id} className="flex space-x-2">
+                  <hr className="top-10 h-8 border-x border-twitter/30" />
+                  <img
+                    src={comment.profileImg}
+                    className="mt-2 h-7 w-7 rounded-full object-cover"
+                    alt=""
                   />
+                  <div>
+                    <div className="flex items-center space-x-l">
+                      <p className="mr-1 font-bold">{comment.username}</p>
+                      <p className="hidden text-sm text-gray-500 lg:inline">
+                        @{comment.username.replace(/\s+/g, "")}.
+                      </p>
+                      <TimeAgo
+                        className="text-sm text-gray-500"
+                        date={comment._createdAt}
+                      />
+                    </div>
+                    <p>{comment.comment}</p>
+                  </div>
                 </div>
-                <p>{comment.comment}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+              ))}
+            </motion.div>
+          )}
+        </>
       )}
     </div>
   );

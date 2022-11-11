@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 function Widgets() {
   return (
     <div style={{ maxWidth: "350px" }}>
-      <div className="overflow-y-auto fixed h-screen">
+      <div className="overflow-y-auto fixed h-screen scrollbar-hide">
         <div className="relative text-gray-800 w-80 p-5">
           <button type="submit" className="absolute ml-4 mt-3 mr-4">
             <svg

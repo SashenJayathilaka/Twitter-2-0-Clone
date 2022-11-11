@@ -1,10 +1,3 @@
-import React, {
-  useState,
-  useRef,
-  Dispatch,
-  MouseEvent,
-  SetStateAction,
-} from "react";
 import {
   CalendarIcon,
   EmojiHappyIcon,
@@ -12,12 +5,13 @@ import {
   PhotographIcon,
   SearchCircleIcon,
 } from "@heroicons/react/outline";
-import { faker } from "@faker-js/faker";
-import { TweetBody, Tweet } from "../typings";
-import { fetchTweet } from "../utils/fetchTweet";
-import toast, { Toaster } from "react-hot-toast";
+import React, { Dispatch, SetStateAction, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import { auth } from "../firebase/firebase";
+import { Tweet, TweetBody } from "../typings";
+import { fetchTweet } from "../utils/fetchTweet";
 
 interface Props {
   setTweets: Dispatch<SetStateAction<Tweet[]>>;
@@ -115,7 +109,12 @@ function TweetBox({ setTweets }: Props) {
             </button>
           </div>
           {imageUrlBoxOpen && (
-            <form className="rounded-lg mt-5 flex bg-twitter/80 py-2 px-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="rounded-lg mt-5 flex bg-twitter/80 py-2 px-4"
+            >
               <input
                 ref={imageInputRef}
                 className="flex-1 bg-transparent p-2 text-white outline-none placeholder:text-white"
@@ -125,14 +124,20 @@ function TweetBox({ setTweets }: Props) {
               <button onClick={addImageTweet} className="font-bold text-white">
                 Add Image
               </button>
-            </form>
+            </motion.div>
           )}
           {image && (
-            <img
-              className="mt-10 h-40 w-full rounded-xl object-contain shadow-lg"
-              src={image}
-              alt="image/tweet"
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <img
+                className="mt-10 h-40 w-full rounded-xl object-contain shadow-lg"
+                src={image}
+                alt="image/tweet"
+              />
+            </motion.div>
           )}
         </form>
       </div>

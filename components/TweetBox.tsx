@@ -9,6 +9,7 @@ import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+
 import { auth } from "../firebase/firebase";
 import { Tweet, TweetBody } from "../typings";
 import { fetchTweet } from "../utils/fetchTweet";
@@ -71,7 +72,12 @@ function TweetBox({ setTweets }: Props) {
   };
 
   return (
-    <div className="flex space-x-2 p-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="flex space-x-2 p-5"
+    >
       <img
         className="h-14 w-14 rounded-full object-cover mt-4"
         src={user?.photoURL!}
@@ -141,7 +147,7 @@ function TweetBox({ setTweets }: Props) {
           )}
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

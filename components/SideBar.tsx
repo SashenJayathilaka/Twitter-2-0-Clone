@@ -28,12 +28,7 @@ const SideBar: React.FC<SideBarProps> = ({ isShow, isHome }) => {
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png"
         alt=""
       />
-      <SidebarRow
-        Icon={HomeIcon}
-        title="Home"
-        isShow={isHome}
-        isHome={isHome}
-      />
+      <SidebarRow Icon={HomeIcon} title="Home" isShow={isHome} />
       <SidebarRow Icon={HashtagIcon} title="Explore" />
       <SidebarRow Icon={BellIcon} title="Notifications" />
       <SidebarRow Icon={MailIcon} title="Messages" />

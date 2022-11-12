@@ -1,28 +1,29 @@
 import { useRouter } from "next/router";
 import React, { SVGProps } from "react";
 import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { auth } from "../firebase/firebase";
 
 interface Props {
   Icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   title: string;
-  onClick?: () => {};
   isShow?: boolean;
-  isHome?: boolean;
 }
 
-function SidebarRow({ Icon, title, onClick, isShow, isHome }: Props) {
+function SidebarRow({ Icon, title, isShow }: Props) {
   const router = useRouter();
+  const [user] = useAuthState(auth);
 
   const handleSignOut = async () => {
     await signOut(auth);
   };
 
   const handleSignIn = () => {
-    if (isHome) {
-      router.push("/auth/signin");
+    if (user) {
+      router.push("/");
     } else {
-      router.back();
+      router.push("/auth/signin");
     }
   };
 

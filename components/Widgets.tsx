@@ -5,7 +5,7 @@ function Widgets() {
   return (
     <div style={{ maxWidth: "350px" }}>
       <div className="overflow-y-auto fixed h-screen scrollbar-hide">
-        <div className="relative text-gray-800 w-80 p-5">
+        <div className="relative text-gray-800 w-80 p-5 dark:text-gray-500">
           <button type="submit" className="absolute ml-4 mt-3 mr-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,21 +27,21 @@ function Widgets() {
             type="search"
             name="search"
             placeholder="Search Twitter"
-            className="bg-dim-700 h-10 px-10 pr-5 w-full rounded-full text-sm focus:outline-none bg-purple-white shadow border-0"
+            className="bg-dim-700 h-10 px-10 pr-5 w-full rounded-full text-sm focus:outline-none bg-purple-white shadow border-0 dark:bg-gray-800 dark:text-gray-200"
           />
         </div>
 
         <div className="max-w-sm rounded-lg bg-dim-700 overflow-hidden m-4 hover:shadow-md">
           <div className="flex">
             <div className="flex-1 m-2">
-              <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-700">
+              <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-700 dark:text-gray-200">
                 {faker.address.country()} trends
               </h2>
             </div>
             <div className="flex-1 px-4 py-2 m-2">
               <a
                 href=""
-                className="text-2xl rounded-full text-gray-800 hover:text-blue-300 float-right"
+                className="text-2xl rounded-full text-gray-800 hover:text-blue-300 float-right dark:text-gray-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,13 +70,13 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1">
-              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 1 . Trending
               </p>
-              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500">
+              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500 dark:text-gray-200">
                 #Microsoft363
               </h2>
-              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 5,466 Tweets
               </p>
             </div>
@@ -106,13 +106,13 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1">
-              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 2 . Politics . Trending
               </p>
-              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500">
+              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500 dark:text-gray-200">
                 #HI-Fashion
               </h2>
-              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 8,464 Tweets
               </p>
             </div>
@@ -142,13 +142,13 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1">
-              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 3 . Rock . Trending
               </p>
-              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500">
+              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500 dark:text-gray-200">
                 #Ferrari
               </h2>
-              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 5,586 Tweets
               </p>
             </div>
@@ -178,13 +178,13 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1">
-              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 4 . Auto Racing . Trending
               </p>
-              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500">
+              <h2 className="px-4 ml-2 w-48 font-bold text-gray-500 dark:text-gray-200">
                 #vettel
               </h2>
-              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500">
+              <p className="px-4 ml-2 mb-3 w-48 text-xs text-gray-500 dark:text-gray-400">
                 9,416 Tweets
               </p>
             </div>
@@ -214,7 +214,7 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1 p-4">
-              <h2 className="px-4 ml-2 w-48 font-bold text-blue-400">
+              <h2 className="px-4 ml-2 w-48 font-bold text-blue-400 cursor-pointer">
                 Show more
               </h2>
             </div>
@@ -224,7 +224,7 @@ function Widgets() {
         <div className="max-w-sm rounded-lg bg-dim-700 overflow-hidden m-4 hover:shadow-md">
           <div className="flex">
             <div className="flex-1 m-2">
-              <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-800">
+              <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-800 dark:text-gray-200">
                 Who to follow
               </h2>
             </div>
@@ -243,7 +243,7 @@ function Widgets() {
                   />
                 </div>
                 <div className="ml-3 mt-3">
-                  <p className="text-base leading-6 font-medium text-gray-700">
+                  <p className="text-base leading-6 font-medium text-gray-700 dark:text-gray-200">
                     {faker.name.firstName()}
                   </p>
                   <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
@@ -255,7 +255,7 @@ function Widgets() {
             </div>
             <div className="flex-1 px-4 py-2 m-2">
               <a href="" className="float-right">
-                <button className="bg-transparent hover:bg-gray-600 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-300 hover:border-transparent rounded-full">
+                <button className="bg-transparent hover:bg-gray-600 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-300 hover:border-transparent rounded-full dark:text-gray-300">
                   Follow
                 </button>
               </a>
@@ -274,7 +274,7 @@ function Widgets() {
                   />
                 </div>
                 <div className="ml-3 mt-3">
-                  <p className="text-base leading-6 font-medium text-gray-800">
+                  <p className="text-base leading-6 font-medium text-gray-800 dark:text-gray-200">
                     {faker.name.firstName()}
                   </p>
                   <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
@@ -285,7 +285,7 @@ function Widgets() {
             </div>
             <div className="flex-1 px-4 py-2 m-2">
               <a href="" className="float-right">
-                <button className="bg-transparent hover:bg-gray-600 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-300 hover:border-transparent rounded-full">
+                <button className="bg-transparent hover:bg-gray-600 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-300 hover:border-transparent rounded-full dark:text-gray-300">
                   Follow
                 </button>
               </a>
@@ -296,7 +296,7 @@ function Widgets() {
 
           <div className="flex">
             <div className="flex-1 p-4">
-              <h2 className="px-4 ml-2 w-48 font-bold text-blue-400">
+              <h2 className="px-4 ml-2 w-48 font-bold text-blue-400 cursor-pointer">
                 Show more
               </h2>
             </div>
@@ -306,13 +306,13 @@ function Widgets() {
         <div className="flow-root m-6">
           <div className="flex-1">
             <a href="#">
-              <p className="text-sm leading-6 font-medium text-gray-500">
+              <p className="text-sm leading-6 font-medium text-gray-500 dark:text-gray-300">
                 Terms Privacy Policy Cookies Imprint Ads info
               </p>
             </a>
           </div>
           <div className="flex-2">
-            <p className="text-sm leading-6 font-medium text-gray-600">
+            <p className="text-sm leading-6 font-medium text-gray-600 dark:text-gray-400">
               © 2020 Twitter, Inc.
             </p>
           </div>

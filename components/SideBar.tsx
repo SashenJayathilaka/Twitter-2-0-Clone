@@ -9,10 +9,12 @@ import {
   UserIcon,
   HomeIcon,
 } from "@heroicons/react/outline";
-import SidebarRow from "./SidebarRow";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase/firebase";
 import { UserIcon as UserSecond } from "@heroicons/react/solid";
+
+import SidebarRow from "./SidebarRow";
+import { auth } from "../firebase/firebase";
+import DarkSwitch from "./DarkSwitch";
 
 type SideBarProps = {
   isShow: boolean;
@@ -48,6 +50,7 @@ const SideBar: React.FC<SideBarProps> = ({ isShow, isHome }) => {
         />
       )}
       <SidebarRow Icon={DotsCircleHorizontalIcon} title="More" />
+      <DarkSwitch />
     </div>
   );
 };

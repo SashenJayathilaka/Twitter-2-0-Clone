@@ -27,7 +27,7 @@ function Feed({ tweets: tweetProp }: Props) {
     });
   };
   return (
-    <div className="col-span-7 scrollbar-hide border-x max-h-screen overflow-scroll lg:col-span-5">
+    <div className="col-span-7 scrollbar-hide border-x max-h-screen overflow-scroll lg:col-span-5 dark:border-gray-800">
       <div className="flex items-center justify-between">
         <h1 className="p-5 pb-0 text-xl font-bold">Home</h1>
         <RefreshIcon
@@ -39,7 +39,7 @@ function Feed({ tweets: tweetProp }: Props) {
       <div>{user && <TweetBox setTweets={setTweets} />}</div>
       <div>
         {tweets.map((tweet) => (
-          <TweetComponents key={tweet._id} tweet={tweet} />
+          <TweetComponents key={tweet._id} tweet={tweet} pushNote={true} />
         ))}
       </div>
     </div>

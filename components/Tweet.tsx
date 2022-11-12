@@ -10,6 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import TimeAgo from "react-timeago";
 import { useRouter } from "next/router";
+import { faker } from "@faker-js/faker";
 
 import { Comment, CommentBody, Tweet } from "../typings";
 import { auth } from "../firebase/firebase";
@@ -20,9 +21,16 @@ interface Props {
   setUserPName?: any;
   userName?: any;
   setUserPhotoUrl?: any;
+  pushNote: boolean;
 }
 
-function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
+function Tweet({
+  tweet,
+  setUserPName,
+  userName,
+  setUserPhotoUrl,
+  pushNote,
+}: Props) {
   const [user] = useAuthState(auth);
   const router = useRouter();
   const [comments, setComments] = useState<Comment[]>([]);
@@ -70,12 +78,14 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
 
   const handleNavigatePage = () => {
     if (user) {
-      router.push({
-        pathname: `user/${tweet.username}`,
-        query: {
-          userName: tweet.username.toString(),
-        },
-      });
+      if (pushNote) {
+        router.push({
+          pathname: `user/${tweet.username}`,
+          query: {
+            userName: tweet.username.toString(),
+          },
+        });
+      } else return;
     } else {
       router.push("auth/signin");
     }
@@ -93,24 +103,27 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
   }; */
 
   return (
-    <div className="flex flex-col space-x-3 border-y border-gray-100 p-5 hover:shadow-lg">
-      <div
-        className="flex space-x-3 cursor-pointer"
-        onClick={handleNavigatePage}
-      >
+    <div className="flex flex-col space-x-3 border-y border-gray-100 p-5 hover:shadow-lg dark:border-gray-800 dark:hover:bg-gray-800">
+      <div className="flex space-x-3 cursor-pointer">
         <img
           className="h-10 w-10 rounded-full object-cover "
           src={tweet.profileImg}
           alt={tweet.username}
+          onClick={handleNavigatePage}
         />
         <div>
           <div className="flex item-center space-x-1">
-            <p className="mr-1 font-bold">{tweet.username}</p>
-            <p className="hidden text-sm text-gray-500 sm:inline">
+            <p className="mr-1 font-bold" onClick={handleNavigatePage}>
+              {tweet.username}
+            </p>
+            <p
+              className="hidden text-sm text-gray-500 sm:inline dark:text-gray-400"
+              onClick={handleNavigatePage}
+            >
               @{tweet.username.replace(/\s+/g, "")}.
             </p>
             <TimeAgo
-              className="text-sm text-gray-500"
+              className="text-sm text-gray-500 dark:text-gray-400"
               date={tweet._createdAt}
             />
           </div>
@@ -141,6 +154,9 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
           className="flex cursor-pointer item-center space-x-3 text-gray-400"
         >
           <SwitchHorizontalIcon className="h-5 w-5" />
+          <p className="text-center">
+            {faker.datatype.number({ min: 10, max: 500 })}
+          </p>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -148,6 +164,9 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
           className="flex cursor-pointer item-center space-x-3 text-gray-400"
         >
           <HeartIcon className="h-5 w-5" />
+          <p className="text-center">
+            {faker.datatype.number({ min: 10, max: 500 })}
+          </p>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -170,7 +189,7 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  className="flex-1 rounded-lg bg-gray-100 p-2 outline-none"
+                  className="flex-1 rounded-lg bg-gray-100 p-2 outline-none dark:bg-gray-700"
                   type="text"
                   placeholder="Write a comment..."
                 />
@@ -178,7 +197,7 @@ function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
                   onClick={handleSubmit}
                   disabled={!input}
                   type="submit"
-                  className="text-twitter  disabled:text-gray-200"
+                  className="text-twitter  disabled:text-gray-200 cursor-pointer"
                 >
                   Post
                 </button>

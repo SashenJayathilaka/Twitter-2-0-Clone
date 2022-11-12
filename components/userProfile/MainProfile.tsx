@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Toaster } from "react-hot-toast";
 
 import { auth } from "../../firebase/firebase";
 import { Tweet } from "../../typings";
@@ -24,16 +23,7 @@ const MainProfile: React.FC<MainProfileProps> = ({ tweets: tweetProp }) => {
   console.log(userName); */
 
   return (
-    <div className="col-span-7 scrollbar-hide border-x max-h-screen overflow-scroll lg:col-span-5">
-      <Toaster />
-      {/*       <div className="flex items-center justify-between">
-        <h1 className="p-5 pb-0 text-xl font-bold">Home</h1>
-        <RefreshIcon
-          onClick={handleRefFunction}
-          className="h-8 w-8 cursor-pointer text-twitter
-        mr-5 mt-5 transition-all duration-500 ease-out hover:rotate-180 active:scale-125"
-        />
-      </div> */}
+    <div className="col-span-7 scrollbar-hide border-x max-h-screen overflow-scroll lg:col-span-5 dark:border-gray-800">
       <div>
         {user && (
           <UserHeader userPName={userPName} userPhotoUrl={userPhotoUrl} />
@@ -48,6 +38,7 @@ const MainProfile: React.FC<MainProfileProps> = ({ tweets: tweetProp }) => {
                 setUserPName={setUserPName}
                 userName={userName}
                 setUserPhotoUrl={setUserPhotoUrl}
+                pushNote={false}
               />
             )}
           </div>

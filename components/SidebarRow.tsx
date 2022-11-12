@@ -33,7 +33,7 @@ function SidebarRow({ Icon, title, isShow }: Props) {
         <div
           className="group flex max-w-fit  bg-blue-100
       cursor-pointer items-center space-x-2 rounded-full px-4 py-3
-      transition-all duration-200 hover:bg-blue-200"
+      transition-all duration-200 hover:bg-blue-200 dark:bg-gray-600"
         >
           <Icon className="h-6 w-6 " />
           <p className="hidden group-hover:text-twitter md:inline-flex text-base font-light">
@@ -47,10 +47,10 @@ function SidebarRow({ Icon, title, isShow }: Props) {
             title === "Sign In"
               ? `group flex max-w-fit 
       cursor-pointer items-center space-x-2 rounded-full px-4 py-3
-      transition-all duration-200 animate-pulse text-blue-500 hover:bg-blue-100`
+      transition-all duration-200 animate-pulse text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 dark:text-blue-300`
               : `group flex max-w-fit 
       cursor-pointer items-center space-x-2 rounded-full px-4 py-3
-      transition-all duration-200 hover:bg-gray-100`
+      transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-600`
           }
         >
           <Icon className="h-6 w-6 " />

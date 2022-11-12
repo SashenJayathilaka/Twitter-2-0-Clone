@@ -11,7 +11,7 @@ const UserHeader: React.FC<UserHeaderProps> = ({ userPName, userPhotoUrl }) => {
   return (
     <>
       <div className="absolute left-[6%]" style={{ bottom: "2rem" }}>
-        <div className="flex-shrink-0 flex hover:bg-gray-200 rounded-full px-6 cursor-pointer py-3 mt-12 mr-2">
+        <div className="flex-shrink-0 flex hover:bg-gray-200 rounded-full px-6 cursor-pointer py-3 mt-12 mr-2 dark:hover:bg-gray-800">
           <div className="flex-shrink-0 group block">
             <div className="flex items-center">
               <div>

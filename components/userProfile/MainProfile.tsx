@@ -1,10 +1,10 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from "next/router";
-import { RefreshIcon } from "@heroicons/react/outline";
+import { Toaster } from "react-hot-toast";
 
-import { Tweet } from "../../typings";
 import { auth } from "../../firebase/firebase";
+import { Tweet } from "../../typings";
 import TweetComponents from "../Tweet";
 import UserHeader from "./UserHeader";
 
@@ -25,6 +25,7 @@ const MainProfile: React.FC<MainProfileProps> = ({ tweets: tweetProp }) => {
 
   return (
     <div className="col-span-7 scrollbar-hide border-x max-h-screen overflow-scroll lg:col-span-5">
+      <Toaster />
       {/*       <div className="flex items-center justify-between">
         <h1 className="p-5 pb-0 text-xl font-bold">Home</h1>
         <RefreshIcon

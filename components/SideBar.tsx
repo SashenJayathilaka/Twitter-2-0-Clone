@@ -44,6 +44,7 @@ const SideBar: React.FC<SideBarProps> = ({ isShow, isHome }) => {
         <SidebarRow
           Icon={user ? UserIcon : UserSecond}
           title={user ? "Sign Out" : "Sign In"}
+          isShow={false}
         />
       )}
       <SidebarRow Icon={DotsCircleHorizontalIcon} title="More" />

@@ -9,17 +9,22 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import TimeAgo from "react-timeago";
-import { Comment, CommentBody, Tweet } from "../typings";
+import { useRouter } from "next/router";
 
+import { Comment, CommentBody, Tweet } from "../typings";
 import { auth } from "../firebase/firebase";
 import { fetchComments } from "../utils/fetchComments";
 
 interface Props {
   tweet: Tweet;
+  setUserPName?: any;
+  userName?: any;
+  setUserPhotoUrl?: any;
 }
 
-function Tweet({ tweet }: Props) {
+function Tweet({ tweet, setUserPName, userName, setUserPhotoUrl }: Props) {
   const [user] = useAuthState(auth);
+  const router = useRouter();
   const [comments, setComments] = useState<Comment[]>([]);
   const [input, setInput] = useState<string>("");
   const [commentBoxOpen, setCommentBoxOpen] = useState<boolean>(false);
@@ -63,13 +68,36 @@ function Tweet({ tweet }: Props) {
     refreshComments();
   };
 
+  const handleNavigatePage = () => {
+    if (user) {
+      router.push({
+        pathname: `user/${tweet.username}`,
+        query: {
+          userName: tweet.username.toString(),
+        },
+      });
+    } else {
+      router.push("auth/signin");
+    }
+  };
+
+  useEffect(() => {
+    if (userName === tweet.username) {
+      setUserPName(tweet.username);
+      setUserPhotoUrl(tweet.profileImg);
+    } else return;
+  }, [tweet]);
+
   /*   const handleSignIn = async () => {
     router.push("/auth/signin");
   }; */
 
   return (
     <div className="flex flex-col space-x-3 border-y border-gray-100 p-5 hover:shadow-lg">
-      <div className="flex space-x-3">
+      <div
+        className="flex space-x-3 cursor-pointer"
+        onClick={handleNavigatePage}
+      >
         <img
           className="h-10 w-10 rounded-full object-cover "
           src={tweet.profileImg}

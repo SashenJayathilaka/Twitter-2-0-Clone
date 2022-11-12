@@ -8,9 +8,10 @@ interface Props {
   title: string;
   onClick?: () => {};
   isShow?: boolean;
+  isHome?: boolean;
 }
 
-function SidebarRow({ Icon, title, onClick, isShow }: Props) {
+function SidebarRow({ Icon, title, onClick, isShow, isHome }: Props) {
   const router = useRouter();
 
   const handleSignOut = async () => {
@@ -18,7 +19,7 @@ function SidebarRow({ Icon, title, onClick, isShow }: Props) {
   };
 
   const handleSignIn = () => {
-    if (isShow) {
+    if (isHome) {
       router.push("/auth/signin");
     } else {
       router.back();

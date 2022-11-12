@@ -1,20 +1,19 @@
-import { GetServerSideProps } from "next";
+import React from "react";
 import Head from "next/head";
-import { Toaster } from "react-hot-toast";
+import { GetServerSideProps } from "next";
 import { motion } from "framer-motion";
 
-import Feed from "../components/Feed";
-import SideBar from "../components/SideBar";
-import Widgets from "../components/Widgets";
-import { Tweet } from "../typings";
-import { fetchTweet } from "../utils/fetchTweet";
+import MainProfile from "../../components/userProfile/MainProfile";
+import SideBar from "../../components/SideBar";
+import Widgets from "../../components/Widgets";
+import { fetchTweet } from "../../utils/fetchTweet";
+import { Tweet } from "../../typings";
 
 interface Props {
   tweets: Tweet[];
 }
 
-const Home = ({ tweets }: Props) => {
-  //console.log(tweets, "🚀🚀");
+const UserProfule = ({ tweets }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,17 +29,16 @@ const Home = ({ tweets }: Props) => {
           href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png"
         />
       </Head>
-      <Toaster />
       <main className="grid grid-cols-9">
-        <SideBar isShow={false} isHome={true} />
-        <Feed tweets={tweets} />
+        <SideBar isShow={true} isHome={false} />
+        <MainProfile tweets={tweets} />
         <Widgets />
       </main>
     </motion.div>
   );
 };
 
-export default Home;
+export default UserProfule;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const tweets = await fetchTweet();

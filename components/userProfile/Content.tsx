@@ -48,9 +48,9 @@ const Content: React.FC<ContentProps> = ({ userPName, userPhotoUrl }) => {
     <div>
       <div>
         <div className="flex justify-start">
-          <div className="px-4 py-2 mx-2">
+          <div className="px-4 py-3 mx-2">
             <div
-              className="text-2xl font-medium rounded-full text-blue-400  hover:text-blue-300 float-right cursor-pointer"
+              className="text-2xl font-medium rounded-full text-blue-400  hover:text-blue-300 float-right cursor-pointer items-center"
               onClick={() => router.back()}
             >
               <svg
@@ -69,7 +69,7 @@ const Content: React.FC<ContentProps> = ({ userPName, userPhotoUrl }) => {
               </svg>
             </div>
           </div>
-          <div className="mx-2 mb-4">
+          <div className="mx-2 py-2.5">
             <h2 className="mb-0 text-xl font-bold text-gray-600">
               {userPName}
             </h2>

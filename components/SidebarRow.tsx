@@ -17,11 +17,11 @@ function SidebarRow({ Icon, title, onClick, isShow }: Props) {
     await signOut(auth);
   };
 
-  const handleSignIn = async () => {
-    if (!isShow) {
-      router.back();
-    } else {
+  const handleSignIn = () => {
+    if (isShow) {
       router.push("/auth/signin");
+    } else {
+      router.back();
     }
   };
 

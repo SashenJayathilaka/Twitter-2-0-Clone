@@ -70,10 +70,10 @@ const Content: React.FC<ContentProps> = ({ userPName, userPhotoUrl }) => {
             </div>
           </div>
           <div className="mx-2 py-2.5">
-            <h2 className="mb-0 text-xl font-bold text-gray-600">
+            <h2 className="mb-0 text-xl font-bold text-gray-600 dark:text-gray-200">
               {userPName}
             </h2>
-            <p className="mb-0 w-48 text-xs text-gray-400">
+            <p className="mb-0 w-48 text-xs text-gray-400 dark:text-gray-300">
               {faker.datatype.number({ min: 10, max: 500 })} Tweets
             </p>
           </div>
@@ -124,21 +124,21 @@ const Content: React.FC<ContentProps> = ({ userPName, userPhotoUrl }) => {
 
           <div className="space-y-1 justify-center w-full mt-3 ml-3">
             <div>
-              <h2 className="text-xl leading-6 font-bold text-gray-800">
+              <h2 className="text-xl leading-6 font-bold text-gray-800 dark:text-white">
                 {userPName}
               </h2>
-              <p className="text-sm leading-5 font-medium text-gray-600">
+              <p className="text-sm leading-5 font-medium text-gray-600 dark:text-gray-400">
                 @{userPName}
               </p>
             </div>
 
             <div className="mt-3">
-              <p className="text-gray-500 leading-tight mb-2">
+              <p className="text-gray-500 leading-tight mb-2 dark:text-gray-300">
                 {faker.name.jobType()} / {faker.name.jobTitle()} /
-                {faker.company.companyName()} <br />
+                {faker.company.name()} <br />
                 Visit my website to test a working <b>Twitter Clone.</b>
               </p>
-              <div className="text-gray-600 flex">
+              <div className="text-gray-600 flex dark:text-gray-400">
                 <span className="flex mr-2">
                   <svg viewBox="0 0 24 24" className="h-5 w-5 paint-icon">
                     <g>
@@ -174,18 +174,24 @@ const Content: React.FC<ContentProps> = ({ userPName, userPhotoUrl }) => {
                 </span>
               </div>
             </div>
-            <div className="pt-3 flex justify-start items-start w-full divide-x divide-gray-800 divide-solid">
+            <div className="pt-3 flex justify-start items-start w-full divide-x divide-gray-800 dark:divide-gray-400 divide-solid">
               <div className="text-center pr-3">
-                <span className="font-bold text-gray-600">
+                <span className="font-bold text-gray-600 dark:text-gray-200">
                   {faker.datatype.number({ min: 10, max: 500 })}
                 </span>
-                <span className="text-gray-600"> Following</span>
+                <span className="text-gray-600 dark:text-gray-300">
+                  {" "}
+                  Following
+                </span>
               </div>
               <div className="text-center px-3">
-                <span className="font-bold text-gray">
+                <span className="font-bold text-gray-600 dark:text-gray-200">
                   {faker.datatype.number({ min: 10, max: 500 })}{" "}
                 </span>
-                <span className="text-gray-600"> Followers</span>
+                <span className="text-gray-600 dark:text-gray-300">
+                  {" "}
+                  Followers
+                </span>
               </div>
             </div>
           </div>

@@ -32,6 +32,7 @@ const SignIn: React.FC<SignInProps> = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
+      className="dark:bg-[#15202b] h-screen overflow-hidden"
     >
       <Head>
         <title>Twitter 2.0</title>

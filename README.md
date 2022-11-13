@@ -52,8 +52,14 @@
 <!-- Screenshots -->
 ### :camera: Screenshots
 
-<div align="center">
-<a href="https://twitterclone-gamma.vercel.app"><img width='800rem'  src='https://user-images.githubusercontent.com/99184393/183280055-9ab92299-5ca4-4865-b317-b2c0d2b77c23.png' alt='image'/></a>
+<div align="center" display='flex'>
+<a href="https://twitterclone-gamma.vercel.app"><img width='800rem'  src='https://user-images.githubusercontent.com/99184393/201503394-7ca854a6-1bff-499c-86be-294d87d7110a.png' alt='image'/></a>
+</div>
+
+<br />
+
+<div align="center" display='flex'>
+<a href="https://twitterclone-gamma.vercel.app"><img width='800rem'  src='https://user-images.githubusercontent.com/99184393/201503349-9fe8f219-7670-4b1c-b977-e8216060e9ec.png' alt='image'/></a>
 </div>
 
 ## <a href="https://twitterclone-gamma.vercel.app" target="_blank">LIVE DEMO 💥</a>

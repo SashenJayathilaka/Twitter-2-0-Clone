@@ -1,19 +1,14 @@
-import {
-  ChatAltIcon,
-  HeartIcon,
-  SwitchHorizontalIcon,
-  UploadIcon,
-} from "@heroicons/react/outline";
+import { faker } from "@faker-js/faker";
+import { HeartIcon, UploadIcon } from "@heroicons/react/outline";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import TimeAgo from "react-timeago";
-import { useRouter } from "next/router";
-import { faker } from "@faker-js/faker";
 
-import { Comment, CommentBody, Tweet } from "../typings";
 import { auth } from "../firebase/firebase";
+import { Comment, CommentBody, Tweet } from "../typings";
 import { fetchComments } from "../utils/fetchComments";
 
 interface Props {
@@ -113,9 +108,30 @@ function Tweet({
         />
         <div>
           <div className="flex item-center space-x-1">
-            <p className="mr-1 font-bold" onClick={handleNavigatePage}>
+            <p
+              className={
+                user?.displayName === tweet.username
+                  ? `font-bold`
+                  : `font-bold mr-1`
+              }
+              onClick={handleNavigatePage}
+            >
               {tweet.username}
             </p>
+            {user?.displayName === tweet.username && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-5 h-5 text-[#00ADED] mr-1 mt-auto mb-auto"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            )}
             <p
               className="hidden text-sm text-gray-500 sm:inline dark:text-gray-400"
               onClick={handleNavigatePage}
@@ -145,7 +161,21 @@ function Tweet({
           onClick={() => setCommentBoxOpen(!commentBoxOpen)}
           className="flex cursor-pointer item-center space-x-3 text-gray-400"
         >
-          <ChatAltIcon className="h-5 w-5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+            />
+          </svg>
+
           <p className="text-center">{comments.length}</p>
         </motion.div>
         <motion.div
@@ -153,7 +183,21 @@ function Tweet({
           whileTap={{ scale: 0.9 }}
           className="flex cursor-pointer item-center space-x-3 text-gray-400"
         >
-          <SwitchHorizontalIcon className="h-5 w-5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"
+            />
+          </svg>
+
           <p className="text-center">
             {faker.datatype.number({ min: 10, max: 500 })}
           </p>

@@ -33,7 +33,7 @@ function SidebarRow({ Icon, title, isShow }: Props) {
         <div
           className="group flex max-w-fit  bg-blue-100
       cursor-pointer items-center space-x-2 rounded-full px-4 py-3
-      transition-all duration-200 hover:bg-blue-200 dark:bg-gray-600"
+      transition-all duration-200 hover:bg-blue-200 dark:bg-gray-600 mb-1 mt-1"
         >
           <Icon className="h-6 w-6 " />
           <p className="hidden group-hover:text-twitter md:inline-flex text-base font-light">

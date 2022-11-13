@@ -19,7 +19,7 @@ const UserProfule = ({ tweets }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="dark:bg-[#15202b]"
+      className="dark:bg-[#15202b] h-screen overflow-hidden"
     >
       <div className="mx-auto max-h-screen overflow-hidden lg:max-w-6xl">
         <Head>

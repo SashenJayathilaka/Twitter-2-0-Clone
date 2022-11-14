@@ -5,7 +5,7 @@
 # Twitter 2.0 with REACT.JS!
   
   <p>
-   Twitter 2.0 with REACT.JS! (Next.js, Sanity CMS, Typescript, SSR, Tailwind & GoogleAuth)
+   Twitter 2.0 with REACT.JS! (Next.js, Sanity CMS, Typescript, SSR, Tailwind, GoogleAuth, Dark Mode & Light Mode & Twitter Profile)
   </p>
   
   

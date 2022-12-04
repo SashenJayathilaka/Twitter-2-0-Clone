@@ -13,7 +13,7 @@
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
     "@types/lodash": "^4.14.188",
-    "firebase": "^9.9.4",
+    "firebase": "^9.14.0",
     "framer-motion": "^7.6.5",
     "lodash": "^4.17.21",
     "next": "12.2.4",

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.13",
     "@portabletext/react": "^2.0.0",
     "@sanity/image-url": "^1.0.1",
     "@types/lodash": "^4.14.191",
